@@ -1,0 +1,14 @@
+Color:
+-Yellow:#fee101
+-Gray: #231f20
+Font: Verdana
+Background hinh (tru about us) phu layer #231f20 opacity 50%
+Kich thuoc section: (1366x8200)
+1366x100: header, navi
+1366x668: slider (carousel)
+1366x768: about us, what we do, process, team, portfolio, faq
+1366x1288: pricing
+1366x249: client
+1366x700: contact us
+1366x500: map
+1366x88: footer

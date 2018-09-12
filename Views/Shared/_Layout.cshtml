@@ -3,40 +3,168 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Fixxo - Your Alteration</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/Logo/FIXXO_LOGO.jpg" />
+    <link href="~/Content/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/Wizard/assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="~/Content/Wizard/assets/css/demo.css" rel="stylesheet" />
+    <link href="~/Content/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,300" rel="stylesheet" />
+    <link href="~/Content/Wizard/assets/css/themify-icons.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class=" d-none d-md-none d-sm-none d-lg-block">
+        <div class="row" id="header">
+            <div class="col-lg-2 text-center">
+                <a><img id="logo" src="~/Content/Logo/FIXXO_LOGO.jpg" /></a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            <div class="col-lg-3">
+                Stay Connected:
+                <a>
+                    <img class="contact-icon" src="~/Content/Section/contact_us/Commu/message.png" />
+                </a>
+                <a>
+                    <img class="contact-icon" src="~/Content/Section/contact_us/Commu/instagram.png" />
+                </a>
+                <a>
+                    <img class="contact-icon" src="~/Content/Section/contact_us/Commu/television.png" />
+                </a>
+                <a>
+                    <img class="contact-icon" src="~/Content/Section/contact_us/Commu/message_1.png" />
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <i class="fa fa-2x fa-phone"></i> Customer Support: <span>(028) 3 666 888</span>
+            </div>
+            <div class="col-lg-4">
+                <i class="fa fa-2x fa-clock-o"></i> Openning Times:
+                <span>Mon - Sat 08:00 - 17:30</span>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <nav id="fixxo-navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=" text-white fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-about" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-whatwedo" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#our-process" href="#">Process</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-ourteam" href="#">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-portfolio" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-price" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-faq" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollTo" data-scroll="#fixxo-contact" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid body-content">
+        <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="image-gallery-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <img id="image-gallery-image" class="img-thumbnail" src="">
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
+                        </div>
+
+                        <div class="col-md-8 text-justify" id="image-gallery-caption">
+                            This text will be overwritten by jQuery
+                        </div>
+
+                        <div class="col-md-2">
+                            <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <nav class="navbar navbar-expand-lg d-none d-sm-none d-md-none d-lg-block" >
+                <div class="collapse navbar-collapse" id="footer-navbar">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-about" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-whatwedo" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#our-process" href="#">Process</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-ourteam" href="#">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-portfolio" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-price" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-faq" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollTo" data-scroll="#fixxo-contact" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row" style="font-size:12px;font-weight:600; color:white;padding-bottom:1em">
+                <div class="col-lg-8 col-md-9 col-sm-12 text-sm-center text-lg-left">
+                    &copy; 2018 <span class="text-yellow">FIXXO</span> - All Rights Reserved
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-12 text-sm-center">
+                    Design & Developed by <span class="text-yellow">Yinyang Workshop</span>
+
+                </div>
+            </div>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Content/Wizard/assets/js/jquery.bootstrap.wizard.js"></script>
+    <script src="~/Content/Wizard/assets/js/paper-bootstrap-wizard.js"></script>
+    <script src="~/Content/Wizard/assets/js/jquery.validate.min.js"></script>
+    <script src="~/Content/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    @Scripts.Render("~/bundles/main")
     @RenderSection("scripts", required: false)
 </body>
 </html>
